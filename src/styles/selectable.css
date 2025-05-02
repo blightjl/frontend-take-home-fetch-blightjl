@@ -1,0 +1,20 @@
+.card {
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+.card:hover {
+    background-color: greenyellow;
+}
+
+.card.selected {
+    background-color: greenyellow;
+}
+
+.list {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+/// <reference types="astro/client" />
+
+declare namespace App {
+    interface Locals {
+        isAuthenticated: boolean;
+        email: string | null;
+        name: string | null;
+    }
+}

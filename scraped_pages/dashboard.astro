@@ -1,0 +1,27 @@
+---
+let isSuccess = "Checking for dogs..."; // initial placeholder
+---
+
+<h1 id="dog-status">{isSuccess}</h1>
+
+<script type="module" lang="ts">
+    // should only do this when first logged in else don't run the request
+  document.addEventListener("DOMContentLoaded", async () => {
+    const statusEl = document.getElementById("dog-status");
+    if (!statusEl) return;
+
+    try {
+      const response = await fetch("https://frontend-take-home-service.fetch.com/dogs/breeds", {
+        method: "GET",
+        credentials: "include",
+      });
+
+      console.log("ran fetch");
+
+      statusEl.textContent = response.ok ? "lots of dogs" : "no dogs";
+    } catch (error) {
+      console.error("Fetch error:", error);
+      if (statusEl) statusEl.textContent = "failed to fetch dogs";
+    }
+  });
+</script>

@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import LoginForm from "../components/LoginForm";
+// import { ViewTransitions } from "astro:transitions";
+---
+<MainLayout title="Login">
+    <!-- <ViewTransitions /> -->
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Please login to access yoru dashboard</p>
+
+        <!-- Interactive login from island -->
+         <LoginForm client:load />
+
+         <!-- Static content -->
+          <div class="help-text">
+            <p>Need help? Contact our support team.</p>
+          </div>
+    </div>
+    <script>
+        if (localStorage.getItem('isAuthenticated') === 'true') {
+            window.location.href='/dashboard';
+        }
+    </script>
+</MainLayout>

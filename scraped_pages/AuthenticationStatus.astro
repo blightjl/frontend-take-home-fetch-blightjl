@@ -1,0 +1,10 @@
+---
+export const prerender = false;
+const { isAuthenticated } = Astro.locals;
+---
+
+<header>
+    <div style="position: fixed; top: 0; right: 0; padding: 1rem;">
+        {isAuthenticated ? 'Logged In' : 'Logged Out'}
+    </div>
+</header>

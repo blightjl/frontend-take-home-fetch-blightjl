@@ -1,0 +1,34 @@
+.dog-card {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+}
+
+.dog-icon {
+    width: 110px;
+    height: 110px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.layout-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.left-panel {
+    flex: 1;
+}
+
+.right-panel {
+    flex: 3
+}
